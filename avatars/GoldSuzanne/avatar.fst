@@ -1,5 +1,5 @@
 exporterVersion = 0.6.0
-name     = Gold Suzanne
+name     = GoldSuzanne
 type     = body+head
 scale    = 1
 filename = susan.fbx
@@ -48,6 +48,8 @@ jointMap = RightHandPinky2 = f_pinky.02.R
 jointMap = RightHandPinky3 = f_pinky.03.R
 jointMap = Neck = spine.005
 jointMap = Head = head
+jointMap = LeftEye = eye.L
+jointMap = RightEye = eye.R
 jointMap = LeftUpLeg = thigh.L
 jointMap = LeftLeg = shin.L
 jointMap = LeftFoot = foot.L
@@ -67,6 +69,10 @@ jointRotationOffset2 = spine.005 = (0.0937119, -3.342964E-12, 5.462828E-13, -0.9
 jointRotationOffset2 = head = (-1.125105E-07, -3.379446E-12, 2.306029E-13, -1)
 jointRotationOffset2 = face = (-1.0506E-07, -3.379446E-12, 2.30603E-13, -1)
 jointRotationOffset2 = face_end = (-1.0506E-07, -3.379446E-12, 2.30603E-13, -1)
+jointRotationOffset2 = eye.R = (-0.2011743, -1.039799E-07, -0.8579715, 0.4726671)
+jointRotationOffset2 = eye.R_end = (-0.2011743, -1.039799E-07, -0.8579715, 0.4726671)
+jointRotationOffset2 = eye.L = (0.2825581, -1.770753E-08, -0.819583, -0.4984425)
+jointRotationOffset2 = eye.L_end = (0.2825581, -1.770753E-08, -0.819583, -0.4984425)
 jointRotationOffset2 = shoulder.L = (0.04271302, 0.996306, -0.02285638, 0.07090844)
 jointRotationOffset2 = upper_arm.L = (-0.01849728, 0.6123219, 0.02616126, 0.7899594)
 jointRotationOffset2 = forearm.L = (-0.03241963, 0.6163452, -0.009339457, 0.7867534)
