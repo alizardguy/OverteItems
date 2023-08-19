@@ -2,6 +2,7 @@
 // scaleMe.js
 //
 // Created by alizard, August 19th 2023.
+// Thank you Alezia Kurdis for the tablet app template.
 //
 // This app lets you easily scale your avatar.
 //
@@ -36,7 +37,7 @@
             appStatus = false;
         }else{
             //Launching the Application UI.
-            tablet.gotoWebScreen(APP_URL); // <== Data can be transmitted at opening of teh UI by using GET method, through paramater in the URL. + "?parameter=value"
+            tablet.gotoWebScreen(APP_URL);
             tablet.webEventReceived.connect(onAppWebEventReceived);
             appStatus = true;
         }
@@ -48,7 +49,7 @@
 
     button.clicked.connect(clicked);
 
-    //This recieved the message from the UI(html) for a specific actions
+    //Receive message from the HTML UI
     function onAppWebEventReceived(message) {
         if (typeof message === "string") {
             var d = new Date();
@@ -70,30 +71,9 @@
         }
     }
 
-    //============ Add your application functions here ==================
-
-    //Here an example of a function that would communicate data to the UI(html) for a specific action
-/*
-    function testCallingTheUItoSendData() {
-        //ADD PROCESSING HERE
-
-        var message = {
-            "channel": channel,
-            "action": "CALL_HTML_UI_ACTION_NAME",
-            "data": "Hello World!"
-        };
-
-        tablet.emitScriptEvent(JSON.stringify(message));
-    }
-*/
-    //==================================================================
-
     function onScreenChanged(type, url) {
         if (type === "Web" && url.indexOf(APP_URL) !== -1) {
             appStatus = true;
-            //Here we know that the HTML UI is loaded.
-            //We could communitate to it here as we know it is loaded.
-            //testCallingTheUItoSendData();
 
         } else {
             appStatus = false;
