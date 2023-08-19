@@ -12,10 +12,7 @@ var ui;
 var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
 
 function onWebEventReceived(event) {
-    var eventJSON = JSON.parse(event);
-    if (eventJSON.type === "zardTestApp") {
-        console.log("zardTestApp received event: " + event);
-    }
+    console.log("lol")
 }
 
 tablet.webEventReceived.connect(onWebEventReceived);
