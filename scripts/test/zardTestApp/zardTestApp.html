@@ -4,32 +4,24 @@
         <meta charset="UTF-8">
         <script>
             function main() {
-            // Send an event to gemstoneApp.js when the page loads
-            // and is ready to get things rolling
-            console.log("document ready");
-            var readyEvent = {
-                "type": "ready",
-            };
-
-            // The event bridge handles events represented as a string the best.
-            // So we first create a JavaScript object, then convert to string
-            EventBridge.emitWebEvent(JSON.stringify(readyEvent));
-
-            // Send an event when user click on each of the gemstone buttons
-            $(".1xbutton").click(function(){
-                console.log(this.value + " button click");
-                var clickEvent = {
-                    "type": "click",
-                    "data": this.value
-                };
-                EventBridge.emitWebEvent(JSON.stringify(clickEvent));
-            });
-        }
+                //stuff here
+                }
         $(document).ready(main);
         </script>
     </head>
     <body>
-        <h1>This is a test app</h1>
-        <button id=".1xbutton">1x</button>
+        <h1 id="test">This is a test app</h1>
+        <button id="1xbutton">1x</button>
+
+        <script>
+            document.getElementById("1xbutton").addEventListener("click", function(){
+                document.getElementById("test").innerHTML = "pressed";
+                var test = {
+                    message: "hi"
+                }
+                EventBridge.emitWebEvent(test);
+            })
+        </script>
+
     </body>
 </html>

@@ -9,11 +9,17 @@
 var AppUi = Script.require('appUi');
 
 var ui;
+var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
 
-
-function onMoreAppWebEventReceived(message) {
-    console.log("lol");
+function onWebEventReceived(event) {
+    var eventJSON = JSON.parse(event);
+    if (eventJSON.type === "zardTestApp") {
+        console.log("zardTestApp received event: " + event);
+    }
 }
+
+tablet.webEventReceived.connect(onWebEventReceived);
+
 
 function startup() {
     ui = new AppUi({
@@ -22,7 +28,8 @@ function startup() {
         graphicsDirectory: Script.resolvePath("./") // The path to your button icons
     });
 
-    MyAvatar.setAvatarScale(1);
+    console.log("setup complete");
+
 }
 startup();
 }()); // END LOCAL_SCOPE
