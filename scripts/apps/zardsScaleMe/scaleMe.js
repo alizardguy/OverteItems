@@ -57,7 +57,7 @@
             var instruction = JSON.parse(message);
             if (instruction.channel === channel) {
                 if (instruction.action === "SCALE") { //<== Use this for action trigger the UI script processing. (whithout delay)
-                    console.log("lol");
+                    MyAvatar.setAvatarScale(instruction.amount);
                 }
             }
         }
