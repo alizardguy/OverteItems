@@ -34,5 +34,16 @@
     <body>
         <h1>Scale Me App</h1>
         <h2>WIP</h2>
+
+        <button id="1x" onclick="scale()">1x</button>
+        <script>
+            function scale(){
+                var message = {
+                    "channel": channel,
+                    "action" : "SCALE"
+                }
+                EventBridge.emitWebEvent(JSON.stringify(message));
+            }
+        </script>
     </body>
 </html>

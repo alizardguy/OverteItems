@@ -56,16 +56,8 @@
             var n = d.getTime();
             var instruction = JSON.parse(message);
             if (instruction.channel === channel) {
-                if (instruction.action === "HUMAN_CALLED_ACTION_NAME" && (n - timestamp) > INTERCALL_DELAY) { //<== Use this for action trigger by a human (button or any ui control). The delay prevent multiple call to destabilize everything. 
-                    d = new Date();
-                    timestamp = d.getTime();
-                    //Call a function to do something here
-                } else if (instruction.action === "SCRIPT_CALLED_ACTION_NAME") { //<== Use this for action trigger the UI script processing. (whithout delay)
-                    //Call a function to do something here
-                } else if (instruction.action === "SELF_UNINSTALL" && (n - timestamp) > INTERCALL_DELAY) { //<== This is a good practice to add a "Uninstall this app" button for rarely used app. (toolbar has a limit in size) 
-                    d = new Date();
-                    timestamp = d.getTime();
-                    ScriptDiscoveryService.stopScript(Script.resolvePath(''), false);
+                if (instruction.action === "SCALE") { //<== Use this for action trigger the UI script processing. (whithout delay)
+                    console.log("lol");
                 }
             }
         }
