@@ -1,3 +1,10 @@
+//
+// scaleMe.js
+//
+// Created by alizard, August 19th 2023.
+//
+// This app lets you easily scale your avatar.
+//
 (function (){
     var jsMainFileName = "scaleMe.js";
     var ROOT = Script.resolvePath('').split(jsMainFileName)[0];
