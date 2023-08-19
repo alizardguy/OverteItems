@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <title>Scale Me</title>
         <!-- main head script -->
         <script>
             var channel = "overte.application.more.zardsscaleme";
@@ -21,25 +22,81 @@
 
             body {
                 background: #454545;
-                font-family: FiraSans-Regular;
-                font-size: 12px;
-                color: #FFFFFF;
+                margin: 0;
+                font-family: sans-serif;
+                background: linear-gradient(#2b2b2b, #0f212e);
+                color: white;
+            }
+
+            .top-bar {
+                height: 90px;
+                background: linear-gradient(#2b2b2b, #1e1e1e);
+                font-weight: bold;
+                padding-left: 30px;
+                padding-right: 30px;
+                display: flex;
+                align-items: center;
+                position: fixed;
+                width: 480px;
+                top: 0;
+                z-index: 1;
+            }
+
+            main{
+                margin-top: 90px;
+                padding: 30px;
+                text-align: center;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            li{
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            
+            button {
+                font-weight: bold;
+                height: 45px;
+                min-width: 120px;
+                text-align: center;
+                border: none;
+                cursor: pointer;
                 text-decoration: none;
-                font-style: normal;
-                font-variant: normal;
-                text-transform: none;
+                background: linear-gradient(#343434 20%, #000 100%);
+                color: white;
+                padding: 5px;
+                margin: 10px;
+                border-radius: 5px;
+                
+            }
+
+            button:hover{
+                background: linear-gradient(#bbbbbb 20%, #646464 100%);
             }
         </style>
     </head>
     <body>
-        <h1>Scale Me App</h1>
+        <div class="top-bar">
+            <h1>Scale Me App</h1>
+        </div>
 
-        <button id="1x" onclick="scale(0.5)">0.5x</button>
-        <button id="1x" onclick="scale(1)">1x</button>
-        <button id="2x" onclick="scale(2)">2x</button>
-        <button id="2x" onclick="scale(3)">3x</button>
-        <button id="2x" onclick="scale(4)">4x</button>
-        <button id="2x" onclick="scale(5)">5x</button>
+        <main>
+            <ul>
+                <li><button id="0.5x" onclick="scale(0.5)">0.5 scale</button></li>
+                <li><button id="1x" onclick="scale(1)">1 scale</button></li>
+                <li><button id="2x" onclick="scale(2)">2 scale</button></li>
+                <li><button id="3x" onclick="scale(3)">3 scale</button></li>
+                <li><button id="4x" onclick="scale(4)">4 scale</button></li>
+                <li><button id="5x" onclick="scale(5)">5 scale</button></li>
+            </ul>
+        </main>
+
         <script>
             function scale(scaleAmount){
                 var message = {
