@@ -1,0 +1,1 @@
+https://github.com/AleziaKurdis/overte_tablet_application_template/blob/main/template/app-template.js
