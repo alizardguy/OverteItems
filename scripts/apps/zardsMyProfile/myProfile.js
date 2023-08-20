@@ -40,7 +40,6 @@
             isActive: appStatus
         });
 
-        sendInfoToUI();
     }
 
     button.clicked.connect(clicked);
@@ -56,6 +55,7 @@
             "username": "username"
         };
 
+        // console.log("data sent to UI: " + JSON.stringify(message));
         tablet.emitScriptEvent(JSON.stringify(message));
     }
 
@@ -65,6 +65,9 @@
     }
 
     function onScreenChanged(type, url) {
+
+        sendInfoToUI();
+
         if (type === "Web" && url.indexOf(APP_URL) !== -1) {
             appStatus = true;
             //Here we know that the HTML UI is loaded.

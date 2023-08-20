@@ -21,6 +21,7 @@
         <!-- script -->
         <script>
             var channel = "overte.application.more.zardsmyprofile";
+            var username = "My"
 
             var thisPageName = "index.html"
             var currentPath = window.location.protocol + "//" + window.location.host + window.location.pathname;
@@ -28,11 +29,11 @@
 
             // listen to calls from JS
             EventBridge.scriptEventReceived.connect(function(message){
+                alert("lol");
                 messageObj = JSON.parse(message);
                 if (messageObj.channel === channel){
                     if (messageObj.action === "GIVE_USER_INFO"){
-                        var username = messageObj.username;
-                        document.getElementById("usernameTitle").textContent = username;
+                        username = messageObj.username;
                     }
                 }
             })
