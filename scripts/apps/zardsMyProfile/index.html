@@ -18,9 +18,28 @@
                 color: white;
             }
         </style>
+        <!-- script -->
+        <script>
+            var channel = "overte.application.more.zardsmyprofile";
+
+            var thisPageName = "index.html"
+            var currentPath = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            var ROOTPATH = currentPath.replace(thisPageName, "");
+
+            // listen to calls from JS
+            EventBridge.scriptEventReceived.connect(function(message){
+                messageObj = JSON.parse(message);
+                if (messageObj.channel === channel){
+                    if (messageObj.action === "GIVE_USER_INFO"){
+                        var username = messageObj.username;
+                        document.getElementById("usernameTitle").textContent = username;
+                    }
+                }
+            })
+        </script>
     </head>
     <body>
-        <h1>My profile</h1>
+        <h1 id="usernameTitle">User's profile</h1>
         <h2>info will be here...</h2>
     </body>
 </html>
