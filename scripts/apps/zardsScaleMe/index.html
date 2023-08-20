@@ -79,6 +79,24 @@
             button:hover{
                 background: linear-gradient(#bbbbbb 20%, #646464 100%);
             }
+
+            .scaleSlider{
+                min-width: 300px;
+            }
+        
+            .break{
+                width: 100%;
+                height: 40px;
+            }
+
+            input{
+                width: 50px;
+                height: 35px;
+                border-radius: 5px;
+                text-align: center;
+                font-size: large;
+                font-weight: bolder;
+            }
         </style>
     </head>
     <body>
@@ -87,6 +105,12 @@
         </div>
 
         <main>
+            <h4> Scale Slider </h4>
+            <input id="scaleSlider" class="scaleSlider" type="range" value="1" min="0.5" max="9" step="0.5"> 
+            <br>
+            <input name="scale" type="number" value="1" step="0.5" min="0.5" max="9" id="scaleInput">
+            <button id="scaleSliderButton">Set Scale</button>
+            <div class="break"></div>
             <h4> Preset Scales </h2>
             <ul>
                 <li><button id="0.25x" onclick="scale(0.25)">0.25 scale</button></li>
@@ -99,6 +123,8 @@
         </main>
 
         <script>
+            var scaleInputValue = 1;
+
             function scale(scaleAmount){
                 var message = {
                     "channel": channel,
@@ -107,6 +133,16 @@
                 }
                 EventBridge.emitWebEvent(JSON.stringify(message));
             }
+
+            document.getElementById("scaleSlider").addEventListener('input', function(){
+                document.getElementById("scaleInput").value = document.getElementById("scaleSlider").value;
+                scaleInputValue = document.getElementById("scaleSlider").value;
+            })
+
+            document.getElementById("scaleInput").addEventListener('input', function(){
+                document.getElementById("scaleSlider").value = document.getElementById("scaleInput").value;
+                scaleInputValue = document.getElementById("scaleInput").value;
+            })
         </script>
     </body>
 </html>
