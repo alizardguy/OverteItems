@@ -4,6 +4,7 @@ type     = body+head
 scale    = 0.7475286
 filename = lowPolyBoldOveteRigged.fbx
 texdir   = textures
+materialMap = {"all":{"materials":{"cullFaceMode": "CULL_NONE"}}}
 jointMap = Hips = spine
 jointMap = Spine = spine.001
 jointMap = Spine1 = spine.002
