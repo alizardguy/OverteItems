@@ -15,16 +15,17 @@ function keyPressEvent(event) {
             }
 }
 
+
 Controller.keyPressEvent.connect(keyPressEvent);
 
 function startNoclip(){
     MyAvatar.setCollisionsEnabled(false);
-    MyAvatar.setFlyingEnabled(true);
     nocliping = true;
+    MyAvatar.isFlying = true;
 }
 
 function endNoclip(){
     MyAvatar.setCollisionsEnabled(true);
-    MyAvatar.setFlyingEnabled(false);
     nocliping = false;
+    MyAvatar.isFlying = false;
 }
