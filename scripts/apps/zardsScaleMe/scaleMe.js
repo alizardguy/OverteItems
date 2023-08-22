@@ -1,10 +1,6 @@
 //
 // scaleMe.js
-//
-// Created by alizard, August 19th 2023.
-// Thank you Alezia Kurdis for the tablet app template.
-//
-// This app lets you easily scale your avatar.
+// By: alizardguy
 //
 (function (){
     var jsMainFileName = "scaleMe.js";
